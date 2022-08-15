@@ -1,12 +1,15 @@
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
+
 let color = (e) => document.getElementById('colorPicker').value;
+
 const slider = document.querySelector('#pixel-amount');
 const sliderText = document.querySelector('.slider-text');
 let update = () => sliderText.innerHTML = slider.value;
 slider.value = 8;
 slider.addEventListener('input', update, createGrid(slider.value));
+
 function createGrid(size) {
     let pad = document.querySelector('.grid-container');
     let pixel = pad.querySelectorAll('div');
@@ -22,6 +25,7 @@ function createGrid(size) {
         pad.insertAdjacentElement("beforeend",pixel);
     }
     clearBoard();
+    fillBoard();
 }
 
 const buttons = document.querySelectorAll('button');
@@ -29,12 +33,16 @@ let selection = 'brush';
     buttons.forEach(button => {
         button.addEventListener('click', () => selection = button.id)
     });
+
+
 function brushColor(e) {
     if (e.type === 'mouseover' && !mouseDown) return
     if (selection === 'brush') {
         e.target.style.backgroundColor = color();
     } else if (selection === 'eraser') {
         e.target.style.backgroundColor = 'rgb(251, 242, 226)';
+    } else if (selection === 'lighten') {
+        e.target.style.backgroundColor = 'filter:brighten(110%)';
     }
 };
 
