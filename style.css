@@ -75,7 +75,7 @@ body {
 button {
     font-size: 18px;
     width: 160px;
-    height: 100px;
+    height: 80px;
     color:rgb(200, 184, 159);
     background-color: rgb(251, 242, 226);
     border: 2px solid rgb(240, 221, 197);
@@ -119,9 +119,20 @@ button:focus {
 }
 
 .info {
+    font-size: 17px;
+    font-weight: bold;
     margin-top: 10px;
     display: flex;
-    justify-content: space-between;
-    align-items: space-between;
+    justify-content: center;
+    align-items: center;
+}
+
+.info img {
+    width: 42px;
+    height: 42px;
+    margin-left: 5px;
+    padding-left: 5px;
+    border-left: 3px double black;
+    
 }
 

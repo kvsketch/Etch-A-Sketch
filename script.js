@@ -1,8 +1,10 @@
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
+let pad = document.querySelector('.grid-container');
 
-let color = (e) => document.getElementById('colorPicker').value;
+
+let color = () => document.getElementById('colorPicker').value;
 
 const slider = document.querySelector('#pixel-amount');
 const sliderText = document.querySelector('.slider-text');
@@ -11,7 +13,6 @@ slider.value = 8;
 slider.addEventListener('input', update, createGrid(slider.value));
 
 function createGrid(size) {
-    let pad = document.querySelector('.grid-container');
     let pixel = pad.querySelectorAll('div');
     pixel.forEach(div => div.remove());
     pad.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -41,14 +42,12 @@ function brushColor(e) {
         e.target.style.backgroundColor = color();
     } else if (selection === 'eraser') {
         e.target.style.backgroundColor = 'rgb(251, 242, 226)';
-    } else if (selection === 'lighten') {
-        e.target.style.backgroundColor = 'filter:brighten(110%)';
-    }
-};
+    };
+}
+
 
 function clearBoard() {
     const btn = document.getElementById('clear-btn');
-    let pad = document.querySelector('.grid-container');
     let pixel = pad.querySelectorAll('div');
 
     btn.addEventListener('click', (e) => pixel.forEach(div => div.style.backgroundColor = 'rgb(251, 242, 226)'));
@@ -56,7 +55,6 @@ function clearBoard() {
 
 function fillBoard() {
     const btn = document.getElementById('fill');
-    let pad = document.querySelector('.grid-container');
     let pixel = pad.querySelectorAll('div');
 
     btn.addEventListener('click', (e) => pixel.forEach(div => div.style.backgroundColor = color()));
