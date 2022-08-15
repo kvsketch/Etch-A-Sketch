@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pix A Sketch</title>
+    <script src="./script.js"defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sketchbook">
+    <div class="left-page">
+        <input id="colorPicker" type="color" value="#333333">
+        <button id="brush">Brush</button>
+        <button id="eraser">Eraser</button>
+        <button id="fill">Fill</button>
+        <button id="clear-btn">Clear</button>
+    </div>
+    <div class="right-page">
+        <div>Draw Here</div>
+        <div class="grid-section">
+
+            <div class="grid-container"></div>
+
+            <div class="slidecontainer">
+            <input type="range" min="8" max="64" class="slider" id="pixel-amount" onchange="createGrid(this.value)">
+         </div>
+            <div class="slider-text"></div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

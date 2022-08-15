@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+.sketchbook {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(251, 242, 226);
+    border: 16px solid black;
+    border-radius: 8px;
+    width: 1400px;
+    height: auto;
+}
+.right-page {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 3px solid rgb(228, 212, 187);
+    border-top-left-radius: 5px;
+    border-right: 3px solid rgb(200, 184, 159);
+}
+.left-page {
+    width: 700px;
+    border-right: 3px solid rgb(200, 184, 159);
+    border-top-right-radius: 5px;
+    border-left: 5px solid rgb(217, 212, 198);
+}
+
+.grid-container {
+    display: grid;
+    width: 600px;
+    height: 600px;
+    border: 3px double rgb(227, 217, 210);
+}
+
+.grid-container div {
+    background-color: rgb(251, 242, 226);
+}
+
+.grid-container div:hover {
+    background-color: rgba(130, 191, 232, 0.171);
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 12px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    background: #d58840;
+  }
+
+button {
+    font-size: 18px;
+    width: 160px;
+    height: 100px;
+    color:rgb(200, 184, 159);
+    background-color: rgb(251, 242, 226);
+    border: 2px solid rgb(240, 221, 197);
+    border-radius: 15px;
+}
+
+button:hover {
+    font-size: 20px;
+    border: 3px solid rgb(149, 140, 130);
+    background-color: rgb(241, 232, 218);
+    color: rgb(125, 118, 107);
+}
+
+#selected {
+    font-size: 18px;
+    width: 160px;
+    height: 100px;
+    color:rgb(68, 63, 56);
+    background-color: rgb(251, 242, 226);
+    border: 2px solid rgb(46, 43, 39);
+    border-radius: 15px;
+}
